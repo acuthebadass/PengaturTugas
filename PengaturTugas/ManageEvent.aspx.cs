@@ -26,63 +26,63 @@ namespace PengaturTugas
 
         protected void btnSubmit_Click(object sender, EventArgs e)
         {
-            string sTaskCode = txtTaskCode.Text.Trim();
-            string sTaskName = txtTaskName.Text.Trim();
-            DateTime dtTaskDueDate = Convert.ToDateTime(datepicker.Value);
-            string sPersonInCharge = txtPersonInCharge.Text.Trim();
-            int iReminderInterval = Convert.ToInt32(txtReminderInterval.Text.Trim());
-            string sTanda = txtTanda.Text.Trim();
-            string sTandaTangan = txtTandaTangan.Text.Trim();
-            string sStatus = txtStatus.Text.Trim();
+            //string sTaskCode = txtTaskCode.Text.Trim();
+            //string sTaskName = txtTaskName.Text.Trim();
+            //DateTime dtTaskDueDate = Convert.ToDateTime(datepicker.Value);
+            //string sPersonInCharge = txtPersonInCharge.Text.Trim();
+            //int iReminderInterval = Convert.ToInt32(txtReminderInterval.Text.Trim());
+            //string sTanda = txtTanda.Text.Trim();
+            //string sTandaTangan = txtTandaTangan.Text.Trim();
+            //string sStatus = txtStatus.Text.Trim();
 
-            //add header
-            if (!eventBLL.InsTask(
-                sTaskCode,
-                sTaskName,
-                dtTaskDueDate,
-                sPersonInCharge,
-                iReminderInterval,
-                sTanda,
-                sTandaTangan,
-                sStatus,
-                out sErrorMsg))
-            {
-                lblErrorMessage.Text = sErrorMsg;
-                return;
-            }
+            ////add header
+            //if (!eventBLL.InsTask(
+            //    sTaskCode,
+            //    sTaskName,
+            //    dtTaskDueDate,
+            //    sPersonInCharge,
+            //    iReminderInterval,
+            //    sTanda,
+            //    sTandaTangan,
+            //    sStatus,
+            //    out sErrorMsg))
+            //{
+            //    lblErrorMessage.Text = sErrorMsg;
+            //    return;
+            //}
 
-            //add detail
-            if (!eventBLL.InsTaskDetail(
-                sTaskCode,
-                dtTaskDueDate,
-                out sErrorMsg))
-            {
-                lblErrorMessage.Text = sErrorMsg;
-                return;
-            }
+            ////add detail
+            //if (!eventBLL.InsTaskDetail(
+            //    sTaskCode,
+            //    dtTaskDueDate,
+            //    out sErrorMsg))
+            //{
+            //    lblErrorMessage.Text = sErrorMsg;
+            //    return;
+            //}
 
-            //add repeating date
-            if (iReminderInterval > 0)
-            {
-                DateTime dtRepeatingDate = DateTime.Now.Date;
+            ////add repeating date
+            //if (iReminderInterval > 0)
+            //{
+            //    DateTime dtRepeatingDate = DateTime.Now.Date;
 
-                while (dtRepeatingDate < dtTaskDueDate)
-                {
-                    dtRepeatingDate = dtRepeatingDate.AddDays(iReminderInterval);
+            //    while (dtRepeatingDate < dtTaskDueDate)
+            //    {
+            //        dtRepeatingDate = dtRepeatingDate.AddDays(iReminderInterval);
 
-                    if (dtRepeatingDate < dtTaskDueDate)
-                    {
-                        if (!eventBLL.InsTaskDetail(
-                            sTaskCode,
-                            dtRepeatingDate,
-                            out sErrorMsg))
-                        {
-                            lblErrorMessage.Text = sErrorMsg;
-                            return;
-                        }
-                    }
-                }
-            }
+            //        if (dtRepeatingDate < dtTaskDueDate)
+            //        {
+            //            if (!eventBLL.InsTaskDetail(
+            //                sTaskCode,
+            //                dtRepeatingDate,
+            //                out sErrorMsg))
+            //            {
+            //                lblErrorMessage.Text = sErrorMsg;
+            //                return;
+            //            }
+            //        }
+            //    }
+            //}
         }
 
         #endregion

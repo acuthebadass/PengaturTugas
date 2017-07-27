@@ -1,18 +1,6 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ManageEvent.aspx.cs" Inherits="PengaturTugas.ManageEvent" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <link rel="stylesheet" href="Content/bootstrap.min.css">
-    <script src="Scripts/jquery-1.10.2.min.js"></script>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
-    <script>
-        $(function () {
-            $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
-        });
-    </script>
-
     <div class="container">
         <%--<form id="form1" runat="server" class="form-horizontal">--%>
         <div class="form-horizontal">
@@ -123,4 +111,17 @@
       <%--  </form>--%>
             </div>
     </div>
+
+    <link rel="stylesheet" href="Content/bootstrap.min.css">
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(function () {
+            $("#datepicker").datepicker({ dateFormat: 'yy-mm-dd' });
+        });
+    </script>
 </asp:Content>
+

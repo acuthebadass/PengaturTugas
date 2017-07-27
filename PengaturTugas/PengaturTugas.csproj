@@ -150,6 +150,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="CalendarJSON.ashx" />
+    <Content Include="ManageEvent.aspx" />
     <Content Include="ManageEvent2.aspx" />
     <Content Include="Scripts\DataTables\Contributing.md" />
     <Content Include="Scripts\DataTables\examples\resources\syntax\Syntax Highlighter license" />
@@ -719,6 +720,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ManageEvent.aspx.cs">
+      <DependentUpon>ManageEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageEvent.aspx.designer.cs">
+      <DependentUpon>ManageEvent.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageEvent2.aspx.cs">
       <DependentUpon>ManageEvent2.aspx</DependentUpon>
